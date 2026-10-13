@@ -22,20 +22,65 @@ function recargar() {
 
 //ejercicio 4
 
-function cont() {
+function Iniciar() {
     let segundos = 30;
     let contador = segundos;
-
     const interval = setInterval(() => {
         console.log(contador);
         contador--;
     }, 1000);
-}
-
-function Iniciar() {
-    window.setTimeout(() => console.log(cont()), 2000);
+    if (segundos == 0) {
+        window.alert("ha llegado a cero");
+    } 
 }
 
 function Detener() {
+    window.location.reload();
+}
+
+// ejercicio 5
+
+function Abrir() {
+    window.open("https://google.com")
+}
+
+function Cerrar() {
+    window.close();
+}
+
+//ejercicio 6
+
+function Fondo() {
+    window.confirm("quieres cambiar el fondo?");
+    const mensaje = window.prompt("dime un color");
+    if (mensaje == "") {
+        window.alert("no has introducido el color");
+        const mensaje = window.prompt("dime un color");
+    } else {
+        document.body.style.background = mensaje;
+    }
+}
+
+//ejercicio 7
+
+function Saluda() {
+    const mensaje = window.prompt("dime tu nombre");
+    if (mensaje == "") {
+        window.alert("no has introducido el nombre");
+        const mensaje = window.prompt("dime tu nombre");
+    } else {
+        window.alert("bienvenido " + mensaje);
+    }
+}
+
+//ejercicio 8
+
+function tama() {
+    if (innerWidth <= 768) {
+        window.alert("ventana pequeña");
+    } else {
+        window.alert("Ventana grande");
+    }
+    document.getElementById("tama").textContent = window.innerWidth;
 
 }
